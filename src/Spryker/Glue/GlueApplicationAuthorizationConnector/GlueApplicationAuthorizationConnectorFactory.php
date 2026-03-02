@@ -14,17 +14,11 @@ use Spryker\Glue\Kernel\AbstractFactory;
 
 class GlueApplicationAuthorizationConnectorFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\GlueApplicationAuthorizationConnector\Processor\AuthorizationChecker\AuthorizationCheckerInterface
-     */
     public function createAuthorizationChecker(): AuthorizationCheckerInterface
     {
         return new AuthorizationChecker($this->getAuthorizationClient());
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplicationAuthorizationConnector\Dependency\Client\GlueApplicationAuthorizationConnectorToAuthorizationClientInterface
-     */
     public function getAuthorizationClient(): GlueApplicationAuthorizationConnectorToAuthorizationClientInterface
     {
         return $this->getProvidedDependency(GlueApplicationAuthorizationConnectorDependencyProvider::CLIENT_AUTHORIZATION);

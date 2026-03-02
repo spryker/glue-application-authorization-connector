@@ -12,10 +12,5 @@ use Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface;
 
 interface AuthorizationCheckerInterface
 {
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Generated\Shared\Transfer\RestErrorMessageTransfer|null
-     */
     public function validate(RestRequestInterface $restRequest): ?RestErrorMessageTransfer;
 }

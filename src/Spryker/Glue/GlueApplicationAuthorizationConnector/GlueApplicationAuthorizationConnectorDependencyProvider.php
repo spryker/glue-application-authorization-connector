@@ -18,11 +18,6 @@ class GlueApplicationAuthorizationConnectorDependencyProvider extends AbstractBu
      */
     public const CLIENT_AUTHORIZATION = 'CLIENT_AUTHORIZATION';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = $this->addAuthorizationClient($container);
@@ -30,11 +25,6 @@ class GlueApplicationAuthorizationConnectorDependencyProvider extends AbstractBu
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addAuthorizationClient(Container $container): Container
     {
         $container->set(static::CLIENT_AUTHORIZATION, function (Container $container) {

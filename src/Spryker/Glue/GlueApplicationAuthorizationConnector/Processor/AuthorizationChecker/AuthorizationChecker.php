@@ -31,19 +31,11 @@ class AuthorizationChecker implements AuthorizationCheckerInterface
      */
     protected $authorizationClient;
 
-    /**
-     * @param \Spryker\Glue\GlueApplicationAuthorizationConnector\Dependency\Client\GlueApplicationAuthorizationConnectorToAuthorizationClientInterface $authorizationClient
-     */
     public function __construct(GlueApplicationAuthorizationConnectorToAuthorizationClientInterface $authorizationClient)
     {
         $this->authorizationClient = $authorizationClient;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Generated\Shared\Transfer\RestErrorMessageTransfer|null
-     */
     public function validate(RestRequestInterface $restRequest): ?RestErrorMessageTransfer
     {
         if (!$restRequest->getRestUser() || !$restRequest->getHttpRequest()->get(RequestConstantsInterface::ATTRIBUTE_IS_PROTECTED)) {
