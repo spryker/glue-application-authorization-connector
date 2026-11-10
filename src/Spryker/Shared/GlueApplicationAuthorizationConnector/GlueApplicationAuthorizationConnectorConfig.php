@@ -7,9 +7,9 @@
 
 namespace Spryker\Shared\GlueApplicationAuthorizationConnector;
 
-use Spryker\Shared\Kernel\AbstractBundleConfig;
+use Spryker\Shared\Kernel\AbstractSharedConfig;
 
-class GlueApplicationAuthorizationConnectorConfig extends AbstractBundleConfig
+class GlueApplicationAuthorizationConnectorConfig extends AbstractSharedConfig
 {
     /**
      * @api
